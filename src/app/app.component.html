@@ -14,10 +14,6 @@
 Введите конечную цепочку:
 <p></p>
 <input type="text" [(ngModel)]="endChain">
-<!--<p>{{ alphabet }}</p>
-<p>{{ multiplicity }}</p>
-<p>{{ initChain }}</p>
-<p>{{ endChain }}</p>-->
 <p></p>
 <p></p>
 Введите минимальную длину:
@@ -30,8 +26,13 @@
 <input type="number" [(ngModel)]="maxLength">
 <p></p>
 <button (click)="getExpression()">Получить выражение</button>
-<button (click)="getChains()">Получить цепочку</button>
+<button (click)="getChains()">Получить цепочки</button>
 <p></p>
-Выражение
-<p>{{ chain }}</p>
-<p>{{ answer.replace(',','') }}</p>
+Регулярное выражение:
+<input type="text" style="width: 600px" [(ngModel)]="chain">
+<p></p>
+<button (click)="setChains()">Получить цепочки по РВ</button>
+<p></p>
+<!--<p>{{ chain }}</p>-->
+Цепочки:
+<p>{{ answer }}</p>
