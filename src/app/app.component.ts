@@ -62,7 +62,7 @@ export class AppComponent {
            if (this.initChain[this.initChain.length - this.endChain.length + i] === this.endChain[j]) {
             lala = this.initChain.substring(0, this.initChain.length - 1 - i);
             console.log(lala);
-            if (this.multiplicity === (lala + this.endChain).length) {
+            if (this.multiplicity === (lala + this.endChain).length && (lala + this.endChain).length >= this.minLength && ((lala + this.endChain).indexOf(this.initChain) !== -1)) {
               this.answer += lala + this.endChain + ' ';
             }
           }
@@ -70,7 +70,7 @@ export class AppComponent {
           if (this.initChain[i] === this.endChain[j]) {
             lala = this.initChain.substring(0, this.initChain.length - i);
             console.log(lala);
-            if (this.multiplicity === (lala + this.endChain).length) {
+            if (this.multiplicity === (lala + this.endChain).length && (lala + this.endChain).length >= this.minLength && ((lala + this.endChain).indexOf(this.initChain) !== -1)) {
               this.answer += lala + this.endChain + ' ';
             }
           }
@@ -155,7 +155,7 @@ export class AppComponent {
       }
       index++;
     }
-    if (this.lengthRV === (0)) {
+    /*if (this.lengthRV === (0)) {
       let lala;
       for (let i = 0; i < this.initChain.length + 3; i++) {
         for (let j = 0; j < this.endChain.length + 3; j++) {
@@ -165,6 +165,7 @@ export class AppComponent {
               console.log(lala);
               if (this.multiplicity === (lala + this.endChain).length) {
                 this.answer += lala + this.endChain + ' ';
+                console.log(this.answer += lala + this.endChain + ' ');
               }
             }
           } else {
@@ -173,13 +174,14 @@ export class AppComponent {
               console.log(lala);
               if (this.multiplicity === (lala + this.endChain).length) {
                 this.answer += lala + this.endChain + ' ';
+                console.log(this.answer += lala + this.endChain + ' ');
               }
             }
           }
 
         }
       }
-    }
+    }*/
     this.multiplicity = this.initChain.length + this.lengthRV + this.endChain.length;
     this.getExpression();
     this.getChains();
